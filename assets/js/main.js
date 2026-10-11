@@ -7,6 +7,13 @@
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+  /* ---------- Botones "Solicitar cita" -> WhatsApp ---------- */
+  if (CFG.citaWhatsapp) {
+    const citaUrl = "https://wa.me/" + String(CFG.citaWhatsapp).replace(/\D/g, "") +
+      (CFG.citaMensaje ? "?text=" + encodeURIComponent(CFG.citaMensaje) : "");
+    $$("[data-cita]").forEach((a) => { a.href = citaUrl; });
+  }
+
   /* ---------- Año del pie ---------- */
   const year = $("#year");
   if (year) year.textContent = String(new Date().getFullYear());

@@ -4,6 +4,9 @@
    esté vacío, no se muestra ningún botón de WhatsApp. */
 window.BACHUL_CONFIG = {
   business: "Bachúl Spa y Estética",
+  // Botones "Solicitar cita": abren este WhatsApp con el mensaje indicado.
+  citaWhatsapp: "50683180003",
+  citaMensaje: "Hola, quisiera solicitar una cita en Bachúl Spa y Estética.",
   sedes: {
     cartago: {
       name: "Cartago",
@@ -11,7 +14,7 @@ window.BACHUL_CONFIG = {
       phoneHref: "tel:+50625521010",
       instagram: "https://www.instagram.com/bachul_spa/",
       instagramHandle: "@bachul_spa",
-      whatsapp: ""
+      whatsapp: "50683180003"
     },
     paseo: {
       name: "Paseo Colón",
