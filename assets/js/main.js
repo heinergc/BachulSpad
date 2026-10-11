@@ -8,8 +8,9 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   /* ---------- Botones "Solicitar cita" -> WhatsApp ---------- */
+  let citaUrl = "";
   if (CFG.citaWhatsapp) {
-    const citaUrl = "https://wa.me/" + String(CFG.citaWhatsapp).replace(/\D/g, "") +
+    citaUrl = "https://wa.me/" + String(CFG.citaWhatsapp).replace(/\D/g, "") +
       (CFG.citaMensaje ? "?text=" + encodeURIComponent(CFG.citaMensaje) : "");
     $$("[data-cita]").forEach((a) => { a.href = citaUrl; });
   }
@@ -180,7 +181,12 @@
     statusNode = null;
 
     if (!sede) {
-      result.append(el("p", { class: "result__empty", text: "Elegí una sede para ver su teléfono, su Instagram y un mensaje listo para enviar." }));
+      result.append(el("p", { class: "result__empty", text: "Escribinos por WhatsApp o elegí una sede para ver su teléfono, su Instagram y un mensaje listo para enviar." }));
+      if (citaUrl) {
+        result.append(el("div", { class: "result__actions" },
+          el("a", { class: "btn btn--primary", href: citaUrl, target: "_blank", rel: "noopener noreferrer", "data-cita": "" }, icon("i-chat"), document.createTextNode("Solicitar cita por WhatsApp"))
+        ));
+      }
       return;
     }
 
