@@ -194,15 +194,17 @@
     statusNode = el("p", { class: "result__status" });
 
     const actions = el("div", { class: "result__actions" });
-    actions.append(
-      el("a", { class: "btn btn--primary", href: sede.phoneHref }, icon("i-phone"), document.createTextNode("Llamar a " + sede.name))
-    );
 
+    // WhatsApp de la sede elegida: abre la conversación con el mensaje generado.
     if (sede.whatsapp) {
-      const wa = el("a", { class: "btn btn--ghost", target: "_blank", rel: "noopener noreferrer", "data-wa": "1" }, icon("i-chat"), document.createTextNode("Escribir por WhatsApp"));
+      const wa = el("a", { class: "btn btn--primary", target: "_blank", rel: "noopener noreferrer", "data-wa": "1" }, icon("i-chat"), document.createTextNode("Solicitar cita por WhatsApp en " + sede.name));
       wa.href = "https://wa.me/" + sede.whatsapp.replace(/\D/g, "");
       actions.append(wa);
     }
+
+    actions.append(
+      el("a", { class: "btn " + (sede.whatsapp ? "btn--ghost" : "btn--primary"), href: sede.phoneHref }, icon("i-phone"), document.createTextNode("Llamar a " + sede.name))
+    );
 
     actions.append(
       el("a", { class: "btn btn--ghost", href: sede.instagram, target: "_blank", rel: "noopener noreferrer" }, icon("i-insta"), document.createTextNode("Instagram de " + sede.name))
@@ -224,7 +226,7 @@
       msgNode,
       actions,
       statusNode,
-      el("p", { class: "result__fine", text: "Esto no envía una solicitud: la cita se coordina con la sede y queda sujeta a disponibilidad y confirmación. Por favor no incluyas información médica en tu mensaje; se conversa en la valoración." })
+      el("p", { class: "result__fine", text: (sede.whatsapp ? "Al tocar WhatsApp se abre la conversación con este mensaje y podés editarlo antes de enviarlo. " : "Esto no envía una solicitud. ") + "La cita se coordina con la sede y queda sujeta a disponibilidad y confirmación. Por favor no incluyas información médica en tu mensaje; se conversa en la valoración." })
     );
     updateMessage();
   }

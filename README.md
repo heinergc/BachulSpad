@@ -25,7 +25,7 @@ assets/fonts/           Instrument Serif e Inter (alojadas localmente)
 ## Cómo se edita
 
 - **Teléfonos e Instagram:** `assets/js/config.js` (para la sección de contacto) y `index.html` (tarjetas de sedes, pie de página y datos estructurados para buscadores). Si cambiás un número, actualizá los tres lugares.
-- **WhatsApp:** los botones "Solicitar cita" abren WhatsApp con el 8318 0003 (`citaWhatsapp` en `config.js`; si lo cambiás, actualizá también el enlace de esos tres botones en `index.html`). El WhatsApp de Cartago también aparece en su tarjeta y en el bloque de contacto. Para activarlo en Paseo Colón, escribí su número en `config.js` (solo dígitos, con código de país, por ejemplo `"50612345678"`).
+- **WhatsApp:** los botones "Solicitar cita" abren WhatsApp con el 8318 0003 (`citaWhatsapp` en `config.js`; si lo cambiás, actualizá también el enlace de esos tres botones en `index.html`). El WhatsApp de Cartago también aparece en su tarjeta y en el bloque de contacto. El de Paseo Colón usa 7252 8996, tomado de los afiches: **confirmar que ese sea su WhatsApp** y, si no, cambiarlo en `config.js` (solo dígitos, con código de país, por ejemplo `"50612345678"`).
 - **Fotografías:** reemplazá los archivos de `assets/img/` conservando el nombre, o editá las etiquetas `<img>` de la galería. Las imágenes se pueden ampliar en el visor.
 - **Servicios:** cada tarjeta de `index.html` con `data-service` alimenta también el selector del formulario.
 
@@ -33,7 +33,7 @@ assets/fonts/           Instrument Serif e Inter (alojadas localmente)
 
 - **Teléfono de Cartago.** Los datos del solicitante indican +506 2552 1010; los afiches muestran 8318 0003. La página usa el primero.
 - **Sedes.** Los afiches mencionan también una sede en Pérez Zeledón (7123 9639); el documento de la solicitud solo lista Cartago y Paseo Colón. La página muestra solo esas dos.
-- **WhatsApp.** Activo solo para 8318 0003 (confirmado por el solicitante). Los afiches muestran ícono de WhatsApp también junto a 7123 9639 y 7252 8996; no se activaron.
+- **WhatsApp.** 8318 0003 (Cartago) está confirmado por el solicitante. El de Paseo Colón (7252 8996) se tomó de los afiches, que lo muestran con ícono de WhatsApp: falta confirmarlo. El 7123 9639 (Pérez Zeledón) no se usa.
 - **Segundo teléfono de Paseo Colón.** Los afiches muestran 7252 8996 además de 7237 3736.
 - **Precios y promociones.** No se publicaron: los afiches tienen vigencia limitada (octubre, diciembre) y la solicitud pide no incluir precios no confirmados.
 - **Direcciones exactas, horarios y enlaces de mapas** de cada sede.

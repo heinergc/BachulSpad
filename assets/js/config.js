@@ -22,7 +22,7 @@ window.BACHUL_CONFIG = {
       phoneHref: "tel:+50672373736",
       instagram: "https://www.instagram.com/bachul_paseo_colon/",
       instagramHandle: "@bachul_paseo_colon",
-      whatsapp: ""
+      whatsapp: "50672528996"
     }
   }
 };
